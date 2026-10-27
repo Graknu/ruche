@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdherentController!{% endblock %}
+
+{% block body %}
+<h1>Liste des adhérents</h1>
+
+<div class="example-wrapper">
+    <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Statu</th>
+                        <th scope="col" class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for adh in allAdherents %}
+                    <tr>
+                        <td>{{ adh.id }}</td>
+                        <td>{{ adh.nom }}</td>
+                        <td>{{ adh.prenom }}</td>
+                        <td>{{ adh.mail }}</td>
+                        <td><span class="badge text-bg-success">Actif</span></td>
+                        <td class="text-end">
+                            <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a>
+                            <a href="#" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    
+</div>
+{% endblock %}
