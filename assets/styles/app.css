@@ -1,3 +1,23 @@
 body {
     background-color: skyblue;
 }
+:root {
+    --sidebar-width: 260px;
+}
+
+.app-sidebar {
+    --bs-offcanvas-width: var(--sidebar-width);
+}
+
+@media (min-width: 992px) {
+    .app-sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: var(--sidebar-width);
+    }
+    .app-main {
+        margin-left: var(--sidebar-width);
+    }
+}
